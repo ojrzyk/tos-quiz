@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>             
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/quiz.js"></script>
+    <script type="text/javascript" src="data/data.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  
+  <body onload="loadCategoryList()" background="images/wall1.gif">
+
+    <div id="mainContainer">
+
+      <div id="menuContainer">
+        <span>wybierz kategorię:</span>
+        <select id="categoryList" onchange="loadQuizList()"></select>
+        <span>wybierz quiz:</span>
+        <select id="quizList"></select>
+        <button onclick="startQuiz()">Start</button>
+      </div>
+
+      <div id="titleContainer"></div>
+      
+      <div id="resultBox">
+        <div>Pozostało pytań: </span><span id="questionIndex"></div>
+        <div>Wszystkich odpowiedzi: </span><span id="answersCount"></div>
+        <div>Poprawnych odpowiedzi: </span><span id="correctAnswersCount"></div>
+      </div>
+      
+      <div id="questionBox">
+        <span id="questionPrefix"></span>
+        <span id="questionQuestion"></span>
+        <span id="questionPostfix"></span>
+        <input type="text" id="questionAnswer" onkeydown="clearComment()"/>
+        
+  
+      	<button id="checkButton" onclick="checkAnswer()">
+      	  <img src="images/scratching-head-smiley-emoticon.gif"/>
+      		<span>Sprawdź</span>
+      	  <img src="images/scratching-head-smiley-emoticon.gif"/>
+      	</button>
+            
+  
+  	    <div id="wrongAnswer">
+          <img src="images/big-thumbs-down-smiley-emoticon.gif"/>
+          <span class="label">Źle! Prawidłowa odpowiedź to <span id="correctAnswerTxt"></span></span>
+          <img src="images/big-thumbs-down-smiley-emoticon.gif"/>
+        </div>
+        
+        <div id="correctAnswer">
+          <img src="images/clicking-your-heels-smiley-emoticon.gif"/>
+          <span>Dobrze</span>
+          <img src="images/clicking-your-heels-smiley-emoticon.gif"/>
+        </div>
+        
+        <button id="nextQuestionButton" onclick="nextQuestion()">Następne</button>
+      </div>
+    </div>
+  </body>
+</html>
